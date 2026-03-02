@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend",
+      "type": "shell",
+      "command": "cd backend && nodemon server.js",
+      "presentation": {
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Frontend",
+      "type": "shell",
+      "command": "cd frontend && npm run dev",
+      "presentation": {
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start All",
+      "dependsOn": ["Backend", "Frontend"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
